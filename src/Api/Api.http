@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:5080
+
+### Create a product (201)
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{ "name": "Keyboard", "price": 49.90 }
+
+### Invalid input (400 ValidationProblemDetails)
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{ "name": "", "price": 0 }
+
+### Get a product: paste the id from the 201 response (404 if missing)
+GET {{baseUrl}}/api/products/00000000-0000-0000-0000-000000000000

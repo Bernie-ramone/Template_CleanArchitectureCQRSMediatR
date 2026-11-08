@@ -1,0 +1,22 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>14</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Quality gates: every warning breaks the build. -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+    <!-- Public APIs must be documented (CS1591 becomes an error). Test projects opt out. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- One place to rename the template: CleanCqrs.Domain, CleanCqrs.Application, ... -->
+    <RootNamespace>CleanCqrs.$(MSBuildProjectName)</RootNamespace>
+    <AssemblyName>CleanCqrs.$(MSBuildProjectName)</AssemblyName>
+  </PropertyGroup>
+
+</Project>
